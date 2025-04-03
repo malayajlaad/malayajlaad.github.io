@@ -1,844 +1,885 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malayaj Laad | Sr. AI/ML Engineer</title>
-  <meta name="description" content="Professional portfolio of Malayaj Laad, a Senior AI/ML Engineer specializing in generative AI, MLOps, and cloud-based machine learning deployments.">
-  
-  <!-- Font import -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Feather Icons (similar to Lucide) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
-  
-  <style>
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
-      --radius: 0.5rem;
-    }
-
-    /* Base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      border-color: hsl(var(--border));
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: hsl(var(--foreground));
-      line-height: 1.5;
-    }
-
-    /* Container */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background-color: white;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    nav {
-      display: none;
-    }
-
-    @media (min-width: 768px) {
-      nav {
-        display: flex;
-        gap: 1.5rem;
-      }
-    }
-
-    nav a {
-      color: #334155;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: #0f172a;
-    }
-
-    .menu-button {
-      background-color: transparent;
-      border: 1px solid #e2e8f0;
-      border-radius: 0.25rem;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.875rem;
-      cursor: pointer;
-    }
-
-    @media (min-width: 768px) {
-      .menu-button {
-        display: none;
-      }
-    }
-
-    /* Main content */
-    main {
-      padding: 2rem 0;
-    }
-
-    /* Hero section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      padding: 3rem 0 5rem;
-    }
-
-    @media (min-width: 768px) {
-      .hero {
-        flex-direction: row;
-        padding: 5rem 0;
-      }
-    }
-
-    .profile-image-container {
-      position: relative;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid white;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-content {
-      flex: 1;
-    }
-
-    @media (min-width: 768px) {
-      .hero-content {
-        width: 66.666667%;
-      }
-    }
-
-    .name {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .name {
-        font-size: 3rem;
-      }
-    }
-
-    .title {
-      font-size: 1.5rem;
-      color: #475569;
-      margin-bottom: 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-      .title {
-        font-size: 1.875rem;
-      }
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      color: #475569;
-    }
-
-    .contact-item i {
-      margin-right: 0.5rem;
-    }
-
-    .hero-description {
-      font-size: 1.125rem;
-      color: #334155;
-      margin-bottom: 2rem;
-    }
-
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      border-radius: 0.25rem;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.2s, color 0.2s;
-    }
-
-    .button-primary {
-      background-color: #1e293b;
-      color: white;
-      border: none;
-    }
-
-    .button-primary:hover {
-      background-color: #0f172a;
-    }
-
-    .button-outline {
-      background-color: transparent;
-      color: #1e293b;
-      border: 1px solid #e2e8f0;
-    }
-
-    .button-outline:hover {
-      background-color: #f8fafc;
-    }
-
-    .button i {
-      margin-right: 0.5rem;
-    }
-
-    /* Section styles */
-    section {
-      padding: 3rem 0;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .section-title {
-      font-size: 1.875rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    /* Card */
-    .card {
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-header {
-      padding: 1.5rem 1.5rem 0;
-    }
-
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .card-description {
-      color: #64748b;
-      font-size: 0.875rem;
-    }
-
-    .card-content {
-      padding: 1.5rem;
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      background-color: #f1f5f9;
-      color: #0f172a;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .badge-outline {
-      background-color: transparent;
-      border: 1px solid #e2e8f0;
-    }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-      .grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Timeline */
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    /* Lists */
-    ul {
-      list-style-position: inside;
-      margin-left: 1.25rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-      color: #334155;
-    }
-
-    /* Tabs */
-    .tabs {
-      margin-bottom: 1.5rem;
-    }
-
-    .tabs-list {
-      display: flex;
-      border-bottom: 1px solid #e2e8f0;
-      margin-bottom: 1.5rem;
-    }
-
-    .tab {
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .tab:hover {
-      color: #0f172a;
-    }
-
-    .tab.active {
-      color: #0f172a;
-      border-bottom-color: #0f172a;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* Form */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 0.375rem;
-      font-family: inherit;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #94a3b8;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #1e293b;
-      color: white;
-      padding: 2rem 0;
-    }
-
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    @media (min-width: 768px) {
-      .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-
-    .footer-info {
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .footer-info {
-        margin-bottom: 0;
-        text-align: left;
-      }
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-nav a {
-      color: #cbd5e1;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-nav a:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      margin-top: 2rem;
-      text-align: center;
-      color: #94a3b8;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science & AI Portfolio</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4fc1e3;
+            --light: #f5f9fc;
+            --dark: #1e1e2c;
+            --success: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .project-tag {
+            background-color: rgba(74, 111, 165, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary);
+        }
+
+        .chart-container {
+            height: 300px;
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .tool-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .form-button:hover {
+            background-color: var(--secondary);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <h1>Malayaj Laad</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="menu-button" id="menuButton">Menu</button>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Hero Section -->
-    <section id="about" class="hero">
-      <div class="profile-image-container">
-        <img src="https://via.placeholder.com/256" alt="Malayaj Laad" class="profile-image">
-      </div>
-      <div class="hero-content">
-        <h1 class="name">Malayaj Laad</h1>
-        <h2 class="title">Sr. AI / ML Engineer</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <i data-feather="phone"></i>
-            <span>+91-8962-812199</span>
-          </div>
-          <div class="contact-item">
-            <i data-feather="mail"></i>
-            <span>malayaj.laad12@gmail.com</span>
-          </div>
-          <div class="contact-item">
-            <i data-feather="map-pin"></i>
-            <span>Pune, India</span>
-          </div>
+    <header>
+        <div class="particles" id="particles"></div>
+        <div class="header-content">
+            <h1>Malayaj Laad</h1>
+            <p>Data Scientist | AI Engineer | Machine Learning Engineer</p>
+            <div id="typewriter" style="min-height: 1.5em; margin-top: 1rem; font-style: italic;"></div>
         </div>
-        <p class="hero-description">
-          Seasoned AI/ML Engineer with 5+ years of experience delivering end-to-end AI solutions, specializing in
-          generative AI, MLOps, and cloud-based machine learning deployments.
-        </p>
-        <div class="button-group">
-          <a href="#contact" class="button button-primary">
-            <i data-feather="mail"></i> Contact Me
-          </a>
-          <a href="#" class="button button-outline">
-            <i data-feather="download"></i> Download CV
-          </a>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Professional Summary -->
-    <section>
-      <h2 class="section-title">Professional Summary</h2>
-      <div class="card">
-        <div class="card-content">
-          <p>
-            Seasoned AI/ML Engineer with 5+ years of experience delivering end-to-end AI solutions, specializing in
-            generative AI, MLOps, and cloud-based machine learning deployments. Proven track record of driving AI
-            innovation, enabling technical solutions, and implementing scalable AI technologies across diverse
-            industries.
-          </p>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">ML</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Skills Section -->
     <section id="skills">
-      <h2 class="section-title">Technical Skills</h2>
-
-      <div class="grid grid-cols-2">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">AI & Machine Learning</h3>
-          </div>
-          <div class="card-content">
-            <span class="badge">PyTorch</span>
-            <span class="badge">TensorFlow</span>
-            <span class="badge">Scikit-learn</span>
-            <span class="badge">Keras</span>
-            <span class="badge">spaCy</span>
-            <span class="badge">Hugging Face</span>
-            <span class="badge">OpenAI API</span>
-            <span class="badge">GPT</span>
-            <span class="badge">LangChain</span>
-            <span class="badge">RAG</span>
-            <span class="badge">CrewAI</span>
-            <span class="badge">LLMs</span>
-          </div>
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3 class="skill-title">Data Analysis</h3>
+                <p>Expert in exploratory data analysis, statistical testing, and deriving actionable insights from complex datasets.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <h3 class="skill-title">Machine Learning</h3>
+                <p>Proficient in supervised and unsupervised learning techniques, with expertise in classification, regression, and clustering algorithms.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🧠</div>
+                <h3 class="skill-title">Deep Learning</h3>
+                <p>Experienced in designing and implementing neural networks for computer vision, NLP, and time-series forecasting tasks.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3 class="skill-title">Programming</h3>
+                <p>Strong command of Python, R, SQL, and Big Data technologies for efficient data processing and analysis.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📈</div>
+                <h3 class="skill-title">Data Visualization</h3>
+                <p>Creating impactful visualizations that communicate complex patterns and insights in an accessible way.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔄</div>
+                <h3 class="skill-title">MLOps</h3>
+                <p>Building robust pipelines for model training, evaluation, deployment, and monitoring in production environments.</p>
+            </div>
         </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Programming & Development</h3>
-          </div>
-          <div class="card-content">
-            <span class="badge">Python</span>
-            <span class="badge">FastAPI</span>
-            <span class="badge">GitHub Actions</span>
-            <span class="badge">Prefect</span>
-            <span class="badge">MLflow</span>
-            <span class="badge">CI/CD</span>
-            <span class="badge">Docker</span>
-            <span class="badge">Kubernetes</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Cloud & Infrastructure</h3>
-          </div>
-          <div class="card-content">
-            <span class="badge">AWS</span>
-            <span class="badge">Lambda</span>
-            <span class="badge">EventBridge</span>
-            <span class="badge">S3</span>
-            <span class="badge">EC2</span>
-            <span class="badge">Azure</span>
-            <span class="badge">OpenAI</span>
-            <span class="badge">AI Studio</span>
-            <span class="badge">Container Apps</span>
-            <span class="badge">Terraform</span>
-            <span class="badge">Serverless</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Data Engineering</h3>
-          </div>
-          <div class="card-content">
-            <span class="badge">MySQL</span>
-            <span class="badge">Postgres</span>
-            <span class="badge">Firestore</span>
-            <span class="badge">Weaviate</span>
-            <span class="badge">Neo4j</span>
-            <span class="badge">Pandas</span>
-            <span class="badge">NumPy</span>
-            <span class="badge">Apache Spark</span>
-            <span class="badge">Zoho Analytics</span>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2 class="section-title">Professional Experience</h2>
-
-      <div class="card">
-        <div class="card-header timeline-header">
-          <div>
-            <h3 class="card-title">AI/ML Engineer</h3>
-            <p class="card-description">Intive, Ahmedabad</p>
-          </div>
-          <span class="badge badge-outline">Oct 2023 – Present</span>
-        </div>
-        <div class="card-content">
-          <ul>
-            <li>Designed and deployed semantic search solutions using generative AI techniques</li>
-            <li>Built RESTful APIs integrating vector databases (Weaviate) and graph databases (Neo4j)</li>
-            <li>Implemented MLOps practices for model accuracy and scalability</li>
-            <li>Delivered AI Proof of Concepts (PoCs) leveraging OpenAI, LangChain, and CrewAI</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header timeline-header">
-          <div>
-            <h3 class="card-title">Data Science Engineer</h3>
-            <p class="card-description">Solution Analysts (Tridhya Group), Ahmedabad</p>
-          </div>
-          <span class="badge badge-outline">May 2022 – Oct 2023</span>
-        </div>
-        <div class="card-content">
-          <ul>
-            <li>Developed AI-powered chatbots integrating WhatsApp Cloud API for personalized marketing</li>
-            <li>Created analytics dashboards reducing manual reporting by 200+ hours monthly</li>
-            <li>Designed ML models for audio fingerprinting and document parsing</li>
-            <li>Implemented predictive analytics driving key business decisions</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header timeline-header">
-          <div>
-            <h3 class="card-title">Previous Roles</h3>
-          </div>
-        </div>
-        <div class="card-content">
-          <ul>
-            <li>Associate Data Scientist, Sophos Knowledge Services Pvt. Ltd (Feb 2021 – May 2022)</li>
-            <li>Programmer Analyst, Cognizant (Feb 2017 – Nov 2019)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
     <section id="projects">
-      <h2 class="section-title">Key Projects</h2>
-
-      <div class="grid grid-cols-2">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">IntiveGPT</h3>
-          </div>
-          <div class="card-content">
-            <p>AI agent platform for employee task automation</p>
-          </div>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-img">Project Image Placeholder</div>
+                <div class="project-content">
+                    <h3 class="project-title">Predictive Customer Churn Model</h3>
+                    <p>Developed a machine learning model to predict customer churn with 92% accuracy, enabling proactive retention strategies.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Machine Learning</span>
+                        <span class="project-tag">Classification</span>
+                        <span class="project-tag">XGBoost</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project Image Placeholder</div>
+                <div class="project-content">
+                    <h3 class="project-title">NLP-based Product Recommendation</h3>
+                    <p>Built a recommendation system using natural language processing to analyze product reviews and suggest personalized recommendations.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">BERT</span>
+                        <span class="project-tag">PyTorch</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project Image Placeholder</div>
+                <div class="project-content">
+                    <h3 class="project-title">Time Series Forecasting for Retail</h3>
+                    <p>Implemented advanced forecasting models to predict product demand, reducing inventory costs by 15% while maintaining service levels.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Time Series</span>
+                        <span class="project-tag">Prophet</span>
+                        <span class="project-tag">LSTM</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project Image Placeholder</div>
+                <div class="project-content">
+                    <h3 class="project-title">Computer Vision for Quality Control</h3>
+                    <p>Developed a CV system to automatically detect product defects, improving detection rate by 35% compared to manual inspection.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">CNN</span>
+                        <span class="project-tag">TensorFlow</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
         </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">ConnectingYouNow (CYN)</h3>
-          </div>
-          <div class="card-content">
-            <p>Semantic search widget using RAG techniques</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">FireBreak</h3>
-          </div>
-          <div class="card-content">
-            <p>AI project management assistant</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Omni Channel</h3>
-          </div>
-          <div class="card-content">
-            <p>Retail chatbot with personalized marketing capabilities</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Education & Certifications -->
-    <section>
-      <h2 class="section-title">Education & Certifications</h2>
-
-      <div class="tabs">
-        <div class="tabs-list">
-          <div class="tab active" data-tab="education">Education</div>
-          <div class="tab" data-tab="certifications">Certifications</div>
-        </div>
-
-        <div id="education" class="tab-content active">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Post Graduate Diploma in Data Science</h3>
-              <p class="card-description">IIIT, Bangalore</p>
+    <section id="dashboard">
+        <h2 class="section-title">Analytics Dashboard</h2>
+        <div class="chart-container" id="chart1"></div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value" id="projects-count">12</div>
+                <div class="metric-label">Projects Completed</div>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Bachelor of Engineering in Mechanical</h3>
-              <p class="card-description">Shri GS Institute of Technology and Science, Indore</p>
+            <div class="metric-card">
+                <div class="metric-value" id="accuracy">92%</div>
+                <div class="metric-label">Avg. Model Accuracy</div>
             </div>
-          </div>
-        </div>
-
-        <div id="certifications" class="tab-content">
-          <div class="card">
-            <div class="card-content">
-              <ul>
-                <li>Vector Databases: From Embeddings to Applications (deeplearning.ai)</li>
-                <li>Building Systems with the ChatGPT API (deeplearning.ai)</li>
-                <li>Multi AI Agent Systems with CrewAI (deeplearning.ai)</li>
-                <li>Knowledge Graphs for RAG (deeplearning.ai)</li>
-              </ul>
+            <div class="metric-card">
+                <div class="metric-value" id="client-satisfaction">98%</div>
+                <div class="metric-label">Client Satisfaction</div>
             </div>
-          </div>
+            <div class="metric-card">
+                <div class="metric-value" id="cost-savings">$1.5M</div>
+                <div class="metric-label">Client Cost Savings</div>
+            </div>
         </div>
-      </div>
+        <div class="chart-container" id="chart2"></div>
     </section>
 
-    <!-- Contact Section -->
+    <section id="tools">
+        <h2 class="section-title">Tools & Technologies</h2>
+        <div class="tools-grid">
+            <div class="tool-item">
+                <div class="tool-icon">🐍</div>
+                <div>Python</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🧮</div>
+                <div>TensorFlow</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🔥</div>
+                <div>PyTorch</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📊</div>
+                <div>Scikit-learn</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📈</div>
+                <div>Pandas</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🔍</div>
+                <div>NumPy</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📉</div>
+                <div>Matplotlib</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">💫</div>
+                <div>Spark</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🗃️</div>
+                <div>SQL</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">☁️</div>
+                <div>AWS/Azure</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🐳</div>
+                <div>Docker</div>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">⚙️</div>
+                <div>Git</div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
-      <h2 class="section-title">Contact Me</h2>
-
-      <div class="card">
-        <div class="card-content">
-          <div class="grid grid-cols-2">
-            <div>
-              <h3 class="card-title" style="margin-bottom: 1rem;">Get In Touch</h3>
-              <div class="contact-item" style="margin-bottom: 1rem;">
-                <i data-feather="mail"></i>
-                <span>malayaj.laad12@gmail.com</span>
-              </div>
-              <div class="contact-item" style="margin-bottom: 1rem;">
-                <i data-feather="phone"></i>
-                <span>+91-8962-812199</span>
-              </div>
-              <div class="contact-item" style="margin-bottom: 1rem;">
-                <i data-feather="map-pin"></i>
-                <span>Pune, India</span>
-              </div>
-
-              <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                <a href="https://github.com/malayajlaad" class="button button-outline" style="padding: 0.5rem;">
-                  <i data-feather="github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/malayaj09/" class="button button-outline" style="padding: 0.5rem;">
-                  <i data-feather="linkedin"></i>
-                </a>
-              </div>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-input" placeholder="Your Name">
             </div>
-
-            <div>
-              <h3 class="card-title" style="margin-bottom: 1rem;">Send a Message</h3>
-              <form id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit" class="button button-primary" style="width: 100%;">Send Message</button>
-              </form>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-input" placeholder="Your Email">
             </div>
-          </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-textarea" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="form-button">Send Message</button>
         </div>
-      </div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-info">
-          <h2 style="font-size: 1.25rem; font-weight: 700;">Malayaj Laad</h2>
-          <p style="color: #cbd5e1;">Sr. AI / ML Engineer</p>
+    <footer>
+        <p>&copy; 2025 Malayaj Laad - Data Scientist & AI Engineer</p>
+        <div class="social-links">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Medium</a>
         </div>
-        <div class="footer-nav">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="currentYear"></span> Malayaj Laad. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // Initialize Feather icons
-    feather.replace();
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        // Particle Animation for Header
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
 
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
 
-    // Mobile menu functionality (can be expanded)
-    document.getElementById('menuButton').addEventListener('click', function() {
-      alert('Mobile menu functionality would go here');
-    });
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const opacity = Math.random() * 0.5 + 0.1;
+                const animDuration = Math.random() * 20 + 10;
+                const animDelay = Math.random() * 10;
 
-    // Tabs functionality
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active class from all tabs and content
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        
-        // Add active class to clicked tab and its content
-        tab.classList.add('active');
-        const tabId = tab.getAttribute('data-tab');
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.opacity = opacity;
+                particle.style.animation = `float ${animDuration}s ease-in-out ${animDelay}s infinite`;
 
-    // Contact form handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Here you would typically send the form data to a server
-      // For GitHub Pages, you might use a service like Formspree
-      alert('Thank you for your message! This would be sent in a real implementation.');
-    });
-  </script>
-</body>
-</html>
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Typewriter effect
+        function typeWriter() {
+            const phrases = [
+                "Turning data into actionable insights",
+                "Building intelligent ML systems",
+                "Solving complex problems with AI",
+                "Data-driven decision making"
+            ];
+
+            const typewriterElement = document.getElementById('typewriter');
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+
+            function type() {
+                const currentPhrase = phrases[phraseIndex];
+
+                if (isDeleting) {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50;
+                } else {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    typingSpeed = 1500; // Pause at end
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typingSpeed = 500; // Pause before next phrase
+                }
+
+                setTimeout(type, typingSpeed);
+            }
+
+            type();
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Create charts for dashboard
+        function createCharts() {
+            // Project types distribution
+            const ctx1 = document.getElementById('chart1').getContext('2d');
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision', 'Data Analysis'],
+                    datasets: [{
+                        data: [35, 20, 15, 20, 10],
+                        backgroundColor: [
+                            '#4a6fa5',
+                            '#166088',
+                            '#4fc1e3',
+                            '#5d8fc9',
+                            '#2e5984'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Project Types Distribution',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Skills growth over time
+            const ctx2 = document.getElementById('chart2').getContext('2d');
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    datasets: [
+                        {
+                            label: 'Machine Learning',
+                            data: [65, 70, 78, 82, 88, 92],
+                            borderColor: '#4a6fa5',
+                            tension: 0.2,
+                            fill: false
+                        },
+                        {
+                            label: 'Deep Learning',
+                            data: [40, 55, 65, 75, 85, 90],
+                            borderColor: '#166088',
+                            tension: 0.2,
+                            fill: false
+                        },
+                        {
+                            label: 'Data Engineering',
+                            data: [60, 65, 70, 75, 80, 85],
+                            borderColor: '#4fc1e3',
+                            tension: 0.2,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Skills Growth Over Time',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Proficiency Level'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Animation on scroll
+        function setupScrollAnimation() {
+            const elements = document.querySelectorAll('.skill-card, .project-card, .metric-card, .tool-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        }
+
+        // Counter animation for metrics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.metric-value');
+            const speed = 200;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalValue = target.innerText;
+                        const isPercentage = finalValue.includes('%');
+                        const isMoney = finalValue.includes('$');
+                        let startValue = 0;
+
+                        const targetValue = isPercentage || isMoney
+                            ? parseFloat(finalValue.replace(/[^0-9.]/g, ''))
+                            : parseInt(finalValue);
+
+                        const increment = targetValue / speed;
+
+                        const updateCounter = () => {
+                            startValue += increment;
+
+                            if (startValue < targetValue) {
+                                if (isPercentage) {
+                                    target.innerText = Math.ceil(startValue) + '%';
+                                } else if (isMoney) {
+                                    target.innerText = '$' + Math.ceil(startValue).toLocaleString();
+                                } else {
+                                    target.innerText = Math.ceil(startValue);
+                                }
+                                setTimeout(updateCounter, 1);
+                            } else {
