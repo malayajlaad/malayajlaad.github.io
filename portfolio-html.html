@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malayaj Laad | Sr. AI/ML Engineer</title>
+  <meta name="description" content="Professional portfolio of Malayaj Laad, a Senior AI/ML Engineer specializing in generative AI, MLOps, and cloud-based machine learning deployments.">
+  
+  <!-- Font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Feather Icons (similar to Lucide) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  
+  <style>
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+      --radius: 0.5rem;
+    }
+
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border-color: hsl(var(--border));
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: hsl(var(--foreground));
+      line-height: 1.5;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+
+    nav a {
+      color: #334155;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #0f172a;
+    }
+
+    .menu-button {
+      background-color: transparent;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .menu-button {
+        display: none;
+      }
+    }
+
+    /* Main content */
+    main {
+      padding: 2rem 0;
+    }
+
+    /* Hero section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 3rem 0 5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        padding: 5rem 0;
+      }
+    }
+
+    .profile-image-container {
+      position: relative;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid white;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        width: 66.666667%;
+      }
+    }
+
+    .name {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .name {
+        font-size: 3rem;
+      }
+    }
+
+    .title {
+      font-size: 1.5rem;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .title {
+        font-size: 1.875rem;
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      color: #475569;
+    }
+
+    .contact-item i {
+      margin-right: 0.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: #334155;
+      margin-bottom: 2rem;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .button-primary {
+      background-color: #1e293b;
+      color: white;
+      border: none;
+    }
+
+    .button-primary:hover {
+      background-color: #0f172a;
+    }
+
+    .button-outline {
+      background-color: transparent;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+    }
+
+    .button-outline:hover {
+      background-color: #f8fafc;
+    }
+
+    .button i {
+      margin-right: 0.5rem;
+    }
+
+    /* Section styles */
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .section-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    /* Card */
+    .card {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-header {
+      padding: 1.5rem 1.5rem 0;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-description {
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-outline {
+      background-color: transparent;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Timeline */
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    /* Lists */
+    ul {
+      list-style-position: inside;
+      margin-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #334155;
+    }
+
+    /* Tabs */
+    .tabs {
+      margin-bottom: 1.5rem;
+    }
+
+    .tabs-list {
+      display: flex;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .tab:hover {
+      color: #0f172a;
+    }
+
+    .tab.active {
+      color: #0f172a;
+      border-bottom-color: #0f172a;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.375rem;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #94a3b8;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem 0;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-info {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-info {
+        margin-bottom: 0;
+        text-align: left;
+      }
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      text-align: center;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <h1>Malayaj Laad</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-button" id="menuButton">Menu</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+      <div class="profile-image-container">
+        <img src="https://via.placeholder.com/256" alt="Malayaj Laad" class="profile-image">
+      </div>
+      <div class="hero-content">
+        <h1 class="name">Malayaj Laad</h1>
+        <h2 class="title">Sr. AI / ML Engineer</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i data-feather="phone"></i>
+            <span>+91-8962-812199</span>
+          </div>
+          <div class="contact-item">
+            <i data-feather="mail"></i>
+            <span>malayaj.laad12@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i data-feather="map-pin"></i>
+            <span>Pune, India</span>
+          </div>
+        </div>
+        <p class="hero-description">
+          Seasoned AI/ML Engineer with 5+ years of experience delivering end-to-end AI solutions, specializing in
+          generative AI, MLOps, and cloud-based machine learning deployments.
+        </p>
+        <div class="button-group">
+          <a href="#contact" class="button button-primary">
+            <i data-feather="mail"></i> Contact Me
+          </a>
+          <a href="#" class="button button-outline">
+            <i data-feather="download"></i> Download CV
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2 class="section-title">Professional Summary</h2>
+      <div class="card">
+        <div class="card-content">
+          <p>
+            Seasoned AI/ML Engineer with 5+ years of experience delivering end-to-end AI solutions, specializing in
+            generative AI, MLOps, and cloud-based machine learning deployments. Proven track record of driving AI
+            innovation, enabling technical solutions, and implementing scalable AI technologies across diverse
+            industries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">AI & Machine Learning</h3>
+          </div>
+          <div class="card-content">
+            <span class="badge">PyTorch</span>
+            <span class="badge">TensorFlow</span>
+            <span class="badge">Scikit-learn</span>
+            <span class="badge">Keras</span>
+            <span class="badge">spaCy</span>
+            <span class="badge">Hugging Face</span>
+            <span class="badge">OpenAI API</span>
+            <span class="badge">GPT</span>
+            <span class="badge">LangChain</span>
+            <span class="badge">RAG</span>
+            <span class="badge">CrewAI</span>
+            <span class="badge">LLMs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Programming & Development</h3>
+          </div>
+          <div class="card-content">
+            <span class="badge">Python</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">Prefect</span>
+            <span class="badge">MLflow</span>
+            <span class="badge">CI/CD</span>
+            <span class="badge">Docker</span>
+            <span class="badge">Kubernetes</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Cloud & Infrastructure</h3>
+          </div>
+          <div class="card-content">
+            <span class="badge">AWS</span>
+            <span class="badge">Lambda</span>
+            <span class="badge">EventBridge</span>
+            <span class="badge">S3</span>
+            <span class="badge">EC2</span>
+            <span class="badge">Azure</span>
+            <span class="badge">OpenAI</span>
+            <span class="badge">AI Studio</span>
+            <span class="badge">Container Apps</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">Serverless</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Data Engineering</h3>
+          </div>
+          <div class="card-content">
+            <span class="badge">MySQL</span>
+            <span class="badge">Postgres</span>
+            <span class="badge">Firestore</span>
+            <span class="badge">Weaviate</span>
+            <span class="badge">Neo4j</span>
+            <span class="badge">Pandas</span>
+            <span class="badge">NumPy</span>
+            <span class="badge">Apache Spark</span>
+            <span class="badge">Zoho Analytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="card">
+        <div class="card-header timeline-header">
+          <div>
+            <h3 class="card-title">AI/ML Engineer</h3>
+            <p class="card-description">Intive, Ahmedabad</p>
+          </div>
+          <span class="badge badge-outline">Oct 2023 – Present</span>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>Designed and deployed semantic search solutions using generative AI techniques</li>
+            <li>Built RESTful APIs integrating vector databases (Weaviate) and graph databases (Neo4j)</li>
+            <li>Implemented MLOps practices for model accuracy and scalability</li>
+            <li>Delivered AI Proof of Concepts (PoCs) leveraging OpenAI, LangChain, and CrewAI</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header timeline-header">
+          <div>
+            <h3 class="card-title">Data Science Engineer</h3>
+            <p class="card-description">Solution Analysts (Tridhya Group), Ahmedabad</p>
+          </div>
+          <span class="badge badge-outline">May 2022 – Oct 2023</span>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>Developed AI-powered chatbots integrating WhatsApp Cloud API for personalized marketing</li>
+            <li>Created analytics dashboards reducing manual reporting by 200+ hours monthly</li>
+            <li>Designed ML models for audio fingerprinting and document parsing</li>
+            <li>Implemented predictive analytics driving key business decisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header timeline-header">
+          <div>
+            <h3 class="card-title">Previous Roles</h3>
+          </div>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li>Associate Data Scientist, Sophos Knowledge Services Pvt. Ltd (Feb 2021 – May 2022)</li>
+            <li>Programmer Analyst, Cognizant (Feb 2017 – Nov 2019)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Key Projects</h2>
+
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">IntiveGPT</h3>
+          </div>
+          <div class="card-content">
+            <p>AI agent platform for employee task automation</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">ConnectingYouNow (CYN)</h3>
+          </div>
+          <div class="card-content">
+            <p>Semantic search widget using RAG techniques</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">FireBreak</h3>
+          </div>
+          <div class="card-content">
+            <p>AI project management assistant</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Omni Channel</h3>
+          </div>
+          <div class="card-content">
+            <p>Retail chatbot with personalized marketing capabilities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section>
+      <h2 class="section-title">Education & Certifications</h2>
+
+      <div class="tabs">
+        <div class="tabs-list">
+          <div class="tab active" data-tab="education">Education</div>
+          <div class="tab" data-tab="certifications">Certifications</div>
+        </div>
+
+        <div id="education" class="tab-content active">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Post Graduate Diploma in Data Science</h3>
+              <p class="card-description">IIIT, Bangalore</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Bachelor of Engineering in Mechanical</h3>
+              <p class="card-description">Shri GS Institute of Technology and Science, Indore</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="certifications" class="tab-content">
+          <div class="card">
+            <div class="card-content">
+              <ul>
+                <li>Vector Databases: From Embeddings to Applications (deeplearning.ai)</li>
+                <li>Building Systems with the ChatGPT API (deeplearning.ai)</li>
+                <li>Multi AI Agent Systems with CrewAI (deeplearning.ai)</li>
+                <li>Knowledge Graphs for RAG (deeplearning.ai)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+
+      <div class="card">
+        <div class="card-content">
+          <div class="grid grid-cols-2">
+            <div>
+              <h3 class="card-title" style="margin-bottom: 1rem;">Get In Touch</h3>
+              <div class="contact-item" style="margin-bottom: 1rem;">
+                <i data-feather="mail"></i>
+                <span>malayaj.laad12@gmail.com</span>
+              </div>
+              <div class="contact-item" style="margin-bottom: 1rem;">
+                <i data-feather="phone"></i>
+                <span>+91-8962-812199</span>
+              </div>
+              <div class="contact-item" style="margin-bottom: 1rem;">
+                <i data-feather="map-pin"></i>
+                <span>Pune, India</span>
+              </div>
+
+              <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <a href="#" class="button button-outline" style="padding: 0.5rem;">
+                  <i data-feather="github"></i>
+                </a>
+                <a href="#" class="button button-outline" style="padding: 0.5rem;">
+                  <i data-feather="linkedin"></i>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="card-title" style="margin-bottom: 1rem;">Send a Message</h3>
+              <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit" class="button button-primary" style="width: 100%;">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-info">
+          <h2 style="font-size: 1.25rem; font-weight: 700;">Malayaj Laad</h2>
+          <p style="color: #cbd5e1;">Sr. AI / ML Engineer</p>
+        </div>
+        <div class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Malayaj Laad. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Feather icons
+    feather.replace();
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile menu functionality (can be expanded)
+    document.getElementById('menuButton').addEventListener('click', function() {
+      alert('Mobile menu functionality would go here');
+    });
+
+    // Tabs functionality
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and content
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab and its content
+        tab.classList.add('active');
+        const tabId = tab.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+
+    // Contact form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you would typically send the form data to a server
+      // For GitHub Pages, you might use a service like Formspree
+      alert('Thank you for your message! This would be sent in a real implementation.');
+    });
+  </script>
+</body>
+</html>
